@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+</head>
+<body>
+
+        <input id="bill" placeholder="Bill amount" type="number">
+        <input id="tip" placeholder="Tip %" type="number">
+        <button id="calc">Calculate Tip</button>
+        <div id="result"></div>
+   
+</body>
+
+<script>
+    const bill = document.querySelector('#bill');
+    const tip = document.querySelector('#tip');
+    const button = document.querySelector('#calc');
+    const result = document.querySelector('#result');
+
+    button.addEventListener('click', () => {
+        const total = (+bill.value) * (1 + (+tip.value) / 100);
+        result.textContent = `Total: $${total.toFixed(2)}`;
+    });
+</script>
+</html>
